@@ -1,0 +1,23 @@
+<h1>Hello there</h1>
+
+<form action="/auth" method="post">
+  <label>Username:</label>
+  <input
+    type="text"
+    name="username"
+    placeholder="Bojack Horseman"
+    required="true"
+  />
+  <label>Password:</label>
+  <input type="password" name="password" placeholder="******" required="true" />
+  <button type="submit">Register</button>
+  {{! el if de a continuación es para el 3er check. por defecto el frontend y el backend tiene 
+  un required en el código, pero si se modificara el frontend ésto lo para  }}
+  {{#if error}}
+    <p style="color:red">{{error}}</p>
+  {{/if}}
+
+  {{#if signupDone}}
+    <p style="color:rgb(0, 123, 255)">{{signupDone}}</p>
+  {{/if}}
+</form>
